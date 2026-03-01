@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+  <main class="container">
+    <nav class="sidebar" aria-label="Form steps">
+      <ol class="steps">
+        <li class="step">
+          <span class="step__number">1</span>
+          <div class="step__info">
+            <span class="step__label">Step 1</span>
+            <span class="step__title">Your info</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__number">2</span>
+          <div class="step__info">
+            <span class="step__label">Step 2</span>
+            <span class="step__title">Select plan</span>
+          </div>
+        </li>
+        <li class="step step--active">
+          <span class="step__number" aria-current="step">3</span>
+          <div class="step__info">
+            <span class="step__label">Step 3</span>
+            <span class="step__title">Add-ons</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__number">4</span>
+          <div class="step__info">
+            <span class="step__label">Step 4</span>
+            <span class="step__title">Summary</span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <form class="form" id="addons-form" novalidate>
+      <section class="form-step">
+        <h1 class="form-step__title">Pick add-ons</h1>
+        <p class="form-step__description">Add-ons help enhance your gaming experience.</p>
+
+        <fieldset class="addons">
+          <legend class="visually-hidden">Select add-ons</legend>
+
+          <div class="addon">
+            <input type="checkbox" id="online-service" name="addons" value="online-service" class="addon__input">
+            <label for="online-service" class="addon__label">
+              <span class="addon__info">
+                <span class="addon__name">Online service</span>
+                <span class="addon__description">Access to multiplayer games</span>
+              </span>
+              <span class="addon__price" data-monthly="+$1/mo" data-yearly="+$10/yr">+$1/mo</span>
+            </label>
+          </div>
+
+          <div class="addon">
+            <input type="checkbox" id="larger-storage" name="addons" value="larger-storage" class="addon__input">
+            <label for="larger-storage" class="addon__label">
+              <span class="addon__info">
+                <span class="addon__name">Larger storage</span>
+                <span class="addon__description">Extra 1TB of cloud save</span>
+              </span>
+              <span class="addon__price" data-monthly="+$2/mo" data-yearly="+$20/yr">+$2/mo</span>
+            </label>
+          </div>
+
+          <div class="addon">
+            <input type="checkbox" id="customizable-profile" name="addons" value="customizable-profile" class="addon__input">
+            <label for="customizable-profile" class="addon__label">
+              <span class="addon__info">
+                <span class="addon__name">Customizable Profile</span>
+                <span class="addon__description">Custom theme on your profile</span>
+              </span>
+              <span class="addon__price" data-monthly="+$2/mo" data-yearly="+$20/yr">+$2/mo</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-navigation">
+          <button type="button" class="btn btn--back" id="addons-back">Go Back</button>
+          <button type="submit" class="btn btn--next">Next Step</button>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

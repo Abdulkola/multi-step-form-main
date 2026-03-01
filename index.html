@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+  <main class="container">
+    <nav class="sidebar" aria-label="Form steps">
+      <ol class="steps">
+        <li class="step step--active">
+          <span class="step__number" aria-current="step">1</span>
+          <div class="step__info">
+            <span class="step__label">Step 1</span>
+            <span class="step__title">Your info</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__number">2</span>
+          <div class="step__info">
+            <span class="step__label">Step 2</span>
+            <span class="step__title">Select plan</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__number">3</span>
+          <div class="step__info">
+            <span class="step__label">Step 3</span>
+            <span class="step__title">Add-ons</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__number">4</span>
+          <div class="step__info">
+            <span class="step__label">Step 4</span>
+            <span class="step__title">Summary</span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <form class="form" id="personal-info-form" novalidate>
+      <section class="form-step">
+        <h1 class="form-step__title">Personal info</h1>
+        <p class="form-step__description">Please provide your name, email address, and phone number.</p>
+
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Stephen King" required aria-describedby="name-error">
+          <span class="form-error" id="name-error" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="e.g. stephenking@lorem.com" required aria-describedby="email-error">
+          <span class="form-error" id="email-error" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="e.g. +1 234 567 890" required aria-describedby="phone-error">
+          <span class="form-error" id="phone-error" role="alert"></span>
+        </div>
+
+        <div class="form-navigation">
+          <button type="submit" class="btn btn--next">Next Step</button>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

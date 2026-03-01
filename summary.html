@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+  <main class="container">
+    <nav class="sidebar" aria-label="Form steps">
+      <ol class="steps">
+        <li class="step">
+          <span class="step__number">1</span>
+          <div class="step__info">
+            <span class="step__label">Step 1</span>
+            <span class="step__title">Your info</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__number">2</span>
+          <div class="step__info">
+            <span class="step__label">Step 2</span>
+            <span class="step__title">Select plan</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__number">3</span>
+          <div class="step__info">
+            <span class="step__label">Step 3</span>
+            <span class="step__title">Add-ons</span>
+          </div>
+        </li>
+        <li class="step step--active">
+          <span class="step__number" aria-current="step">4</span>
+          <div class="step__info">
+            <span class="step__label">Step 4</span>
+            <span class="step__title">Summary</span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <form class="form" id="summary-form" novalidate>
+      <section class="form-step">
+        <h1 class="form-step__title">Finishing up</h1>
+        <p class="form-step__description">Double-check everything looks OK before confirming.</p>
+
+        <div class="summary">
+          <div class="summary__item summary__item--plan">
+            <div class="summary__plan-info">
+              <span class="summary__plan-name"></span>
+              <button type="button" class="summary__change-link" id="change-plan">Change</button>
+            </div>
+            <span class="summary__plan-price"></span>
+          </div>
+
+          <div class="summary__addons" id="summary-addons"></div>
+
+          <div class="summary__total">
+            <span class="summary__total-label">Total (per month)</span>
+            <span class="summary__total-price"></span>
+          </div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="btn btn--back" id="summary-back">Go Back</button>
+          <button type="submit" class="btn btn--confirm">Confirm</button>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

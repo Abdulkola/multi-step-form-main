@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+  <main class="container">
+    <nav class="sidebar" aria-label="Form steps">
+      <ol class="steps">
+        <li class="step">
+          <span class="step__number">1</span>
+          <div class="step__info">
+            <span class="step__label">Step 1</span>
+            <span class="step__title">Your info</span>
+          </div>
+        </li>
+        <li class="step step--active">
+          <span class="step__number" aria-current="step">2</span>
+          <div class="step__info">
+            <span class="step__label">Step 2</span>
+            <span class="step__title">Select plan</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__number">3</span>
+          <div class="step__info">
+            <span class="step__label">Step 3</span>
+            <span class="step__title">Add-ons</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__number">4</span>
+          <div class="step__info">
+            <span class="step__label">Step 4</span>
+            <span class="step__title">Summary</span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <form class="form" id="plan-form" novalidate>
+      <section class="form-step">
+        <h1 class="form-step__title">Select your plan</h1>
+        <p class="form-step__description">You have the option of monthly or yearly billing.</p>
+
+        <fieldset class="plan-options">
+          <legend class="visually-hidden">Choose your plan</legend>
+
+          <div class="plan-option">
+            <input type="radio" id="arcade" name="plan" value="arcade" class="plan-option__input">
+            <label for="arcade" class="plan-option__label">
+              <img src="./assets/images/icon-arcade.svg" alt="" class="plan-option__icon">
+              <span class="plan-option__name">Arcade</span>
+              <span class="plan-option__price" data-monthly="$9/mo" data-yearly="$90/yr">$9/mo</span>
+              <span class="plan-option__discount" hidden>2 months free</span>
+            </label>
+          </div>
+
+          <div class="plan-option">
+            <input type="radio" id="advanced" name="plan" value="advanced" class="plan-option__input">
+            <label for="advanced" class="plan-option__label">
+              <img src="./assets/images/icon-advanced.svg" alt="" class="plan-option__icon">
+              <span class="plan-option__name">Advanced</span>
+              <span class="plan-option__price" data-monthly="$12/mo" data-yearly="$120/yr">$12/mo</span>
+              <span class="plan-option__discount" hidden>2 months free</span>
+            </label>
+          </div>
+
+          <div class="plan-option">
+            <input type="radio" id="pro" name="plan" value="pro" class="plan-option__input">
+            <label for="pro" class="plan-option__label">
+              <img src="./assets/images/icon-pro.svg" alt="" class="plan-option__icon">
+              <span class="plan-option__name">Pro</span>
+              <span class="plan-option__price" data-monthly="$15/mo" data-yearly="$150/yr">$15/mo</span>
+              <span class="plan-option__discount" hidden>2 months free</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <span class="form-error" id="plan-error" role="alert"></span>
+
+        <div class="billing-toggle">
+          <span class="billing-toggle__label billing-toggle__label--active" id="monthly-label">Monthly</span>
+          <label class="toggle-switch" for="billing-period">
+            <input type="checkbox" id="billing-period" name="billing-period" class="toggle-switch__input" aria-labelledby="monthly-label yearly-label">
+            <span class="toggle-switch__slider"></span>
+          </label>
+          <span class="billing-toggle__label" id="yearly-label">Yearly</span>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" class="btn btn--back" id="plan-back">Go Back</button>
+          <button type="submit" class="btn btn--next">Next Step</button>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

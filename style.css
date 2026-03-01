@@ -1,0 +1,504 @@
+@font-face {
+	font-family: "Ubuntu";
+	src: url("./assets/fonts/Ubuntu-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Ubuntu";
+	src: url("./assets/fonts/Ubuntu-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Ubuntu";
+	src: url("./assets/fonts/Ubuntu-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--blue-950: hsl(213, 96%, 18%);
+	--purple-600: hsl(243, 100%, 62%);
+	--blue-300: hsl(228, 100%, 84%);
+	--blue-200: hsl(206, 94%, 87%);
+	--red-500: hsl(354, 84%, 57%);
+
+	--grey-500: hsl(231, 11%, 63%);
+	--purple-200: hsl(229, 24%, 87%);
+	--blue-100: hsl(218, 100%, 97%);
+	--blue-50: hsl(231, 100%, 99%);
+	--white: hsl(0, 100%, 100%);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 16px;
+	background: var(--blue-100);
+	color: var(--blue-950);
+	display: grid;
+	place-content: center;
+	padding: 0 0 1.25rem;
+}
+
+.container {
+	width: min(100%, 58.75rem);
+	margin: 0 auto;
+	display: grid;
+	background: var(--white);
+	border-radius: 1rem;
+	padding: 1rem;
+	gap: 2rem;
+	box-shadow: 0 1.25rem 2.5rem -1.5rem var(--grey-500);
+}
+
+.sidebar {
+	background-image: url("./assets/images/bg-sidebar-mobile.svg");
+	background-size: cover;
+	background-position: center;
+	border-radius: 0;
+	min-height: 10.75rem;
+	padding: 2rem 1rem;
+	margin: -1rem -1rem 0;
+}
+
+.steps {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.step {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.step__number {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 999px;
+	border: 1px solid var(--white);
+	color: var(--white);
+	display: grid;
+	place-items: center;
+	font-weight: 700;
+	font-size: 0.95rem;
+}
+
+.step--active .step__number {
+	background: var(--blue-200);
+	color: var(--blue-950);
+	border-color: var(--blue-200);
+}
+
+.step__info {
+	display: none;
+}
+
+.step__label {
+	text-transform: uppercase;
+	color: var(--blue-300);
+	font-size: 0.75rem;
+	letter-spacing: 0.04em;
+}
+
+.step__title {
+	text-transform: uppercase;
+	color: var(--white);
+	font-weight: 700;
+	font-size: 0.86rem;
+	letter-spacing: 0.06em;
+}
+
+.form {
+	width: min(100%, 28.125rem);
+	margin: -4.5rem auto 0;
+	background: var(--white);
+	border-radius: 0.75rem;
+	padding: 2rem 1.5rem 1rem;
+	min-height: 31rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.form-step {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	height: 100%;
+}
+
+.form-step__title {
+	margin: 0;
+	font-size: 2rem;
+	line-height: 1.1;
+	color: var(--blue-950);
+}
+
+.form-step__description {
+	margin: 0;
+	color: var(--grey-500);
+	line-height: 1.5;
+}
+
+.form-group {
+	display: grid;
+	gap: 0.35rem;
+	margin-top: 0.25rem;
+}
+
+.form-label {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: var(--blue-950);
+}
+
+.form-input {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	border-radius: 0.5rem;
+	border: 1px solid var(--purple-200);
+	font: inherit;
+	font-weight: 500;
+	color: var(--blue-950);
+	background: var(--white);
+}
+
+.form-input::placeholder {
+	color: var(--grey-500);
+	font-weight: 500;
+}
+
+.form-input:focus-visible,
+.btn:focus-visible,
+.plan-option__input:focus-visible + .plan-option__label,
+.addon__input:focus-visible + .addon__label,
+.toggle-switch__input:focus-visible + .toggle-switch__slider,
+.summary__change-link:focus-visible {
+	outline: 2px solid var(--purple-600);
+	outline-offset: 2px;
+}
+
+.form-input:invalid[aria-describedby] {
+	border-color: var(--red-500);
+}
+
+.form-error {
+	min-height: 1rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: var(--red-500);
+	justify-self: end;
+}
+
+.form-navigation {
+	margin-top: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.75rem;
+	padding-top: 1.2rem;
+}
+
+.btn {
+	font: inherit;
+	font-weight: 500;
+	border: 0;
+	border-radius: 0.5rem;
+	padding: 0.8rem 1.35rem;
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+
+.btn--next,
+.btn--confirm {
+	margin-left: auto;
+	color: var(--white);
+	background: var(--blue-950);
+}
+
+.btn--confirm {
+	background: var(--purple-600);
+}
+
+.btn--back {
+	color: var(--grey-500);
+	background: transparent;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.btn:hover {
+	opacity: 0.9;
+}
+
+.plan-options,
+.addons {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	display: grid;
+	gap: 0.8rem;
+}
+
+.plan-option,
+.addon {
+	position: relative;
+}
+
+.plan-option__input,
+.addon__input,
+.toggle-switch__input {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.plan-option__label,
+.addon__label {
+	border: 1px solid var(--purple-200);
+	border-radius: 0.5rem;
+	padding: 0.9rem 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	cursor: pointer;
+	background: var(--white);
+	transition: 0.2s ease;
+}
+
+.plan-option__label {
+	align-items: flex-start;
+	min-height: 10rem;
+	flex-direction: column;
+	gap: 2.25rem;
+}
+
+.plan-option__name,
+.addon__name,
+.summary__plan-name {
+	display: block;
+	font-weight: 700;
+	color: var(--blue-950);
+}
+
+.plan-option__price,
+.addon__description,
+.summary__total-label,
+.summary__change-link,
+.thank-you__message {
+	color: var(--grey-500);
+	font-size: 0.9rem;
+}
+
+.plan-option__discount,
+.addon__price,
+.summary__plan-price,
+.summary__total-price {
+	color: var(--purple-600);
+	font-size: 0.88rem;
+	font-weight: 500;
+}
+
+.plan-option__input:checked + .plan-option__label,
+.addon__input:checked + .addon__label {
+	border-color: var(--purple-600);
+	background: var(--blue-50);
+}
+
+.billing-toggle {
+	border-radius: 0.5rem;
+	background: var(--blue-50);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.85rem;
+}
+
+.billing-toggle__label {
+	color: var(--grey-500);
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+
+.billing-toggle__label--active {
+	color: var(--blue-950);
+}
+
+.toggle-switch {
+	width: 2.45rem;
+	height: 1.3rem;
+	border-radius: 1rem;
+	background: var(--blue-950);
+	position: relative;
+	display: inline-flex;
+	cursor: pointer;
+	padding: 0.15rem;
+	align-items: center;
+}
+
+.toggle-switch__slider {
+	width: 0.84rem;
+	height: 0.84rem;
+	border-radius: 50%;
+	background: var(--white);
+	transform: translateX(0);
+	transition: transform 0.2s ease;
+}
+
+.toggle-switch__input:checked + .toggle-switch__slider {
+	transform: translateX(1.1rem);
+}
+
+.addon__label {
+	justify-content: space-between;
+}
+
+.summary {
+	background: var(--blue-50);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+.summary__item,
+.summary__total {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.summary__item--plan {
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--purple-200);
+}
+
+.summary__addons {
+	display: grid;
+	gap: 0.7rem;
+	padding-top: 1rem;
+}
+
+.summary__total {
+	padding: 0 1rem;
+}
+
+.summary__change-link {
+	border: 0;
+	background: transparent;
+	text-decoration: underline;
+	cursor: pointer;
+	font: inherit;
+	padding: 0;
+}
+
+.summary__change-link:hover {
+	color: var(--purple-600);
+}
+
+.thank-you {
+	text-align: center;
+	margin: auto;
+	max-width: 28rem;
+	padding: 2rem 0;
+}
+
+.thank-you__icon {
+	width: 3.5rem;
+	height: 3.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.thank-you__title {
+	margin: 0;
+	font-size: 2rem;
+	color: var(--blue-950);
+}
+
+.thank-you__message {
+	line-height: 1.5;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	color: var(--grey-500);
+	margin-top: 0.5rem;
+	padding: 0 1rem;
+}
+
+.attribution a {
+	color: var(--purple-600);
+}
+
+@media (min-width: 768px) {
+	body {
+		padding: 1.5rem;
+	}
+
+	.container {
+		grid-template-columns: 17.125rem 1fr;
+	}
+
+	.sidebar {
+		background-image: url("./assets/images/bg-sidebar-desktop.svg");
+		min-height: 35.5rem;
+		border-radius: 0.75rem;
+		margin: 0;
+		padding: 2.5rem 2rem;
+	}
+
+	.steps {
+		flex-direction: column;
+		gap: 2rem;
+		align-items: flex-start;
+	}
+
+	.step__info {
+		display: grid;
+		gap: 0.2rem;
+	}
+
+	.form {
+		margin: 0;
+		width: min(100%, 28.125rem);
+		min-height: 35.5rem;
+		padding: 2.8rem 0 1rem;
+	}
+
+	.plan-options {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
